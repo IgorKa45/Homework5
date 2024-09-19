@@ -31,14 +31,12 @@ public class Main {
 
         System.out.println("Задание 3");
         //Исследуемый год
-        short year = 2012;
+        short year = 2000;
 
-        if (year % 4 == 0 && year > 1584) {
+        if (year % 4 == 0 && year % 100 != 0 && year > 1584) {
             System.out.println("Данный год является високосным.");
         } else if (year % 400 == 0 && year > 1584) {
             System.out.println("Данный год является високосным.");
-        } else if (year % 100 == 0 && year > 1584) {
-            System.out.println("Данный год не является високосным.");
         } else if (year > 1584) {
             System.out.println("Данный год не является високосным.");
         } else {
