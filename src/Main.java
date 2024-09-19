@@ -4,14 +4,12 @@ public class Main {
         System.out.println("Задание 1");
 
         // 1 = iOS; 0 = android
-        byte clientOS =  1;
+        byte clientOS = 1;
         if (clientOS == 1) {
             System.out.println("Установите версию приложения для iOS по ссылке.");
-        }
-        else if (clientOS == 0) {
+        } else if (clientOS == 0) {
             System.out.println("Установите версию приложения для Android по ссылке.");
-        }
-        else {
+        } else {
             System.out.println("Ошибка. Неизвестная операционная система.");
         }
 
@@ -19,49 +17,31 @@ public class Main {
 
         // для Операционных систем использую переменные из предыдущего задания
         short clientDeviceYear = 2015;
-        if (clientDeviceYear >= 2015) {
-            if (clientOS == 1) {
-                System.out.println("Установите версию приложения для iOS по ссылке.");
-            }
-            else if (clientOS == 0) {
-                System.out.println("Установите версию приложения для Android по ссылке.");
-            }
-            else {
-                System.out.println("Ошибка. Неизвестная операционная система.");
-            }
-
-        }
-        else {
-            if (clientOS == 1) {
-                System.out.println("Установите облегчённую версию приложения для iOS по ссылке.");
-            }
-            else if (clientOS == 0) {
-                System.out.println("Установите облегчённую версию приложения для Android по ссылке.");
-            }
-            else {
-                System.out.println("Ошибка. Неизвестная операционная система.");
-            }
+        if (clientDeviceYear >= 2015 && clientOS == 1) {
+            System.out.println("Установите версию приложения для iOS по ссылке.");
+        } else if (clientDeviceYear >= 2015 && clientOS == 0) {
+            System.out.println("Установите версию приложения для Android по ссылке.");
+        } else if (clientDeviceYear < 2015 && clientOS == 1) {
+            System.out.println("Установите облегчённую версию приложения для iOS по ссылке.");
+        } else if (clientDeviceYear < 2015 && clientOS == 0) {
+            System.out.println("Установите облегчённую версию приложения для Android по ссылке.");
+        } else {
+            System.out.println("Ошибка. Неизвестная операционная система.");
         }
 
         System.out.println("Задание 3");
         //Исследуемый год
-        short year = 2013;
+        short year = 2012;
 
-        if (year >= 1584) {
-            if (year % 4 == 0) {
-                System.out.println("Данный год является високосным.");
-            }
-            else if (year % 400 == 0) {
-                System.out.println("Данный год является високосным.");
-            }
-            else if (year % 100 == 0) {
-                System.out.println("Данный год не является високосным.");
-            }
-            else {
-                System.out.println("Данный год не является високосным.");
-            }
-        }
-        else {
+        if (year % 4 == 0 && year > 1584) {
+            System.out.println("Данный год является високосным.");
+        } else if (year % 400 == 0 && year > 1584) {
+            System.out.println("Данный год является високосным.");
+        } else if (year % 100 == 0 && year > 1584) {
+            System.out.println("Данный год не является високосным.");
+        } else if (year > 1584) {
+            System.out.println("Данный год не является високосным.");
+        } else {
             System.out.println("Этот год не может считаться високосным так как это понятие ввели в 1584 году.");
         }
 
@@ -75,16 +55,13 @@ public class Main {
 
         if (deliveryDistance <= 20) {
             System.out.println("Потребуется дней " + deliveryTime);
-        }
-        else if (deliveryDistance >= 21 && deliveryDistance <= 60) {
-            deliveryTime =deliveryTime + 1;
+        } else if (deliveryDistance >= 21 && deliveryDistance <= 60) {
+            deliveryTime = deliveryTime + 1;
             System.out.println("Потребуется дней " + deliveryTime);
-        }
-        else if (deliveryDistance >= 61 && deliveryDistance <= 100) {
-            deliveryTime =deliveryTime + 1 + 1;
+        } else if (deliveryDistance >= 61 && deliveryDistance <= 100) {
+            deliveryTime = deliveryTime + 1 + 1;
             System.out.println("Потребуется дней " + deliveryTime);
-        }
-        else {
+        } else {
             System.out.println("Доставка на такое расстояние не предусмотрена.");
         }
 
@@ -128,4 +105,4 @@ public class Main {
                 System.out.println("Введён несуществующий месяц.");
         }
     }
-    }
+}
